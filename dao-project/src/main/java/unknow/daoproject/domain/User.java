@@ -1,12 +1,22 @@
 package unknow.daoproject.domain;
 
-public class User {
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+public class User implements Serializable {
+    public List<String> list = new ArrayList<>();
     private Integer id;
 
     private String user;
 
     private String pass;
 
+    public User() {
+        for (int i=0; i<100000; i++) {
+            list.add(new String("asdasdasqewqwezcrewrw") + Math.random() + Math.random());
+        }
+    }
     public Integer getId() {
         return id;
     }
