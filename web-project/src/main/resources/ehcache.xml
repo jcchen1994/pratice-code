@@ -23,6 +23,9 @@
     <cache alias="object">
         <key-type>java.lang.String</key-type>
         <value-type>java.lang.Object</value-type>
+        <expiry>
+            <tti>3</tti>
+        </expiry>
         <resources>
             <heap unit="MB">50</heap>
             <offheap unit="MB">100</offheap>
