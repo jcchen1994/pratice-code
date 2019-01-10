@@ -44,7 +44,6 @@ public class RedisClient {
   public void put(String key, String value) {
      try (Jedis jedis = jedisPool.getResource()) {
       jedis.set(key, value);
-      System.out.println("redis:"+value);
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -52,6 +51,7 @@ public class RedisClient {
 
   public String get(String key) {
     try (Jedis jedis = jedisPool.getResource()){
+
       return jedis.get(key);
     } catch (Exception e) {
       e.printStackTrace();
@@ -65,5 +65,9 @@ public class RedisClient {
     } catch (Exception e) {
       e.printStackTrace();
     }
+  }
+
+  public Jedis getJedis() {
+    return jedisPool.getResource();
   }
 }
